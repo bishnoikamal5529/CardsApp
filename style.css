@@ -74,6 +74,11 @@ footer{
     box-shadow: white 0px 2px 5px;
 }
 
+sup{
+    color:black;
+}
+
+
 @media (max-width:700px) {
     article{
         padding: 10px 20px;
