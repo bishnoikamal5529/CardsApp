@@ -1,13 +1,34 @@
-let spadesArr = ['A','2','3','4','5','6','7','8','9','J','Q','K'];
-let heartArr = ['A','2','3','4','5','6','7','8','9','J','Q','K'];
-let diamondsArr = ['A','2','3','4','5','6','7','8','9','J','Q','K'];
-let clubsArr = ['A','2','3','4','5','6','7','8','9','J','Q','K'];
+let spadesArr = ['A','2','3','4','5','6','7','8','9','1','J','Q','K'];
+let heartArr = ['A','2','3','4','5','6','7','8','9','1','J','Q','K'];
+let diamondsArr = ['A','2','3','4','5','6','7','8','9','1','J','Q','K'];
+let clubsArr = ['A','2','3','4','5','6','7','8','9','1','J','Q','K'];
 
 // DOM ELEMETNS
 const clubs = document.querySelector('.clubs');
 const spades = document.querySelector('.spades');
 const diamonds = document.querySelector('.diamonds');
 const hearts = document.querySelector('.hearts');
+
+const RemDiamonds = document.querySelector('.remDiamonds');
+const RemSpades = document.querySelector('.remSpades');
+const RemHearts = document.querySelector('.remHearts');
+const RemClubs = document.querySelector('.remClubs');
+
+
+
+
+
+function calRemainingCards(arr){
+    let count = 0;
+    arr.forEach(element => {
+        if(element != 0)
+        {
+            count++;
+        }
+    });
+    return count;
+}
+
 
 /* Code For Clubs */
 
@@ -24,14 +45,16 @@ clubsChange.forEach(element => {
         parElement.classList.add('displayNone');
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
-        clubsArr.forEach(element => {
-            if(element == letterVal)
+
+        for(let i=0; i<clubsArr.length; i++)
+        {
+            if(clubsArr[i] == letterVal)
             {
-                console.log("Value removed from array is:" + element);
-                element = 0;
+                clubsArr[i] = 0;
             }
-        });
-        
+        }
+        RemClubs.textContent = calRemainingCards(clubsArr);
+        console.log(clubsArr);
     })
 
 });
@@ -52,14 +75,15 @@ spadesChange.forEach(element => {
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
-        spadesArr.forEach(element => {
-            if(element == letterVal)
+        for(let i=0; i<spadesArr.length; i++)
+        {
+            if(spadesArr[i] == letterVal)
             {
-                console.log("Value removed from array is:" + element);
-                element = 0;
+                spadesArr[i] = 0;
             }
-        });
-        
+        }
+        RemSpades.textContent = calRemainingCards(spadesArr);
+
     })
 
 });
@@ -80,14 +104,15 @@ diamondsChange.forEach(element => {
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
-        diamondsArr.forEach(element => {
-            if(element == letterVal)
+        for(let i=0; i<diamondsArr.length; i++)
+        {
+            if(diamondsArr[i] == letterVal)
             {
-                console.log("Value removed from array is:" + element);
-                element = 0;
+                diamondsArr[i] = 0;
             }
-        });
-        
+        }
+        RemDiamonds.textContent = calRemainingCards(diamondsArr);
+
     })
 
 });
@@ -109,14 +134,15 @@ heartsChange.forEach(element => {
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
-        heartArr.forEach(element => {
-            if(element == letterVal)
+        for(let i=0; i<heartArr.length; i++)
+        {
+            if(heartArr[i] == letterVal)
             {
-                console.log("Value removed from array is:" + element);
-                element = 0;
+                heartArr[i] = 0;
             }
-        });
-        
+        }
+        RemHearts.textContent = calRemainingCards(heartArr);
+
     })
 
 });
