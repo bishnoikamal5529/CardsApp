@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(39, 34, 34);
+}
+
+label,p{
+    color: aliceblue;
+}
+
+.displayNone{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow:column;
+}
+
+.players{
+    margin: 10px 50px;
+    padding: 0px 10px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: white 0px 2px 5px;
+    min-width: 200px;
+    width: 60vw;
+}
+
+.emoji{
+    font-size: 3rem;
+}
+.red{
+    background-color: rgb(219, 48, 48);
+    box-shadow: rgb(206, 120, 120) 0px 2px 5px;
+}
+
+article{
+    margin: 10px 50px;
+    padding: 10px 10px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: none;
+    color: aliceblue;
+    box-shadow: white 0px 2px 5px;
+    min-width: 200px;
+    width: 50vw;
+    display: flex;
+    justify-content:space-between;
+    font-size: 2rem;
+    padding-left: 36%;
+    box-sizing: border-box;
+}
+
+.heartsCards article, .diamondsCards article{
+    background-color: rgb(207, 63, 63);
+}   
+
+
+@media (max-width:700px) {
+    article{
+        padding: 10px 20px;
+    }
+}
