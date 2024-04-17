@@ -61,6 +61,17 @@ article{
     background-color: rgb(207, 63, 63);
 }   
 
+footer{
+    text-align: center;
+    position: relative;
+    margin: 10px 50px;
+    padding: 10px 10px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: none;
+    color: aliceblue;
+    box-shadow: white 0px 2px 5px;
+}
 
 @media (max-width:700px) {
     article{
