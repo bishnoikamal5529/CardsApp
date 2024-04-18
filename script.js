@@ -14,7 +14,31 @@ const RemSpades = document.querySelector('.remSpades');
 const RemHearts = document.querySelector('.remHearts');
 const RemClubs = document.querySelector('.remClubs');
 
+const showRemBut = document.querySelector('.showRemaining');
+const remainShow = document.querySelector('.remainingCards');
+const updateSpades = document.querySelector('.remainSpades');
+const updateHearts = document.querySelector('.remainHearts');
+const updateClubs = document.querySelector('.remainClubs');
+const updateDiamonds = document.querySelector('.remainDiamonds');
 
+const riskSpade = document.querySelector('.riskSpade');
+const riskHeart = document.querySelector('.riskHeart');
+const riskClub = document.querySelector('.riskClub');
+const riskDiamond = document.querySelector('.riskDiamond');
+
+/* LAST RISK BUTTONS */
+riskSpade.addEventListener('click', ()=>{
+    riskSpade.classList.toggle('riskAfter');
+});
+riskHeart.addEventListener('click', ()=>{
+    riskHeart.classList.toggle('riskAfter');
+});
+riskClub.addEventListener('click', ()=>{
+    riskClub.classList.toggle('riskAfter');
+});
+riskDiamond.addEventListener('click', ()=>{
+    riskDiamond.classList.toggle('riskAfter');
+});
 
 
 
@@ -29,6 +53,71 @@ function calRemainingCards(arr){
     return count;
 }
 
+function updateClubsFun()
+{
+
+    /* update clubs */
+    let newText = '♣️:';
+    clubsArr.forEach(element => {
+        if(element == '1' && element != '0')
+        {
+            newText = newText.concat('10,');
+        }else if(element != '0'){
+            newText = newText.concat(element, ',');
+        }
+    });
+    updateClubs.textContent = newText;
+
+        /* update spades */
+
+
+    newText = '♠️:';
+    spadesArr.forEach(element => {
+        if(element == '1' && element != '0')
+        {
+            newText = newText.concat('10,');
+        }else if(element != '0'){
+            newText = newText.concat(element, ',');
+        }
+    });
+    updateSpades.textContent = newText;
+
+
+        /* update hearts */
+    
+    newText = '♥️:';
+    heartArr.forEach(element => {
+        if(element == '1' && element != '0')
+        {
+            newText = newText.concat('10,');
+        }else if(element != '0'){
+            newText = newText.concat(element, ',');
+        }
+    });
+    updateHearts.textContent = newText;
+
+
+        /* update Diamonds */
+
+    newText = '♦️:';
+    diamondsArr.forEach(element => {
+        if(element == '1' && element != '0')
+        {
+            newText = newText.concat('10,');
+        }else if(element != '0'){
+            newText = newText.concat(element, ',');
+        }
+    });
+    updateDiamonds.textContent = newText;
+
+}
+
+
+/* Remaining Cards */
+showRemBut.addEventListener('click' , () => {
+    remainShow.classList.toggle('displayNone');
+    updateClubsFun();
+});
 
 /* Code For Clubs */
 
@@ -37,7 +126,10 @@ const clubsChange = document.querySelectorAll('.clubsChange');
 
 clubs.addEventListener('click', () => {
     clubCards.classList.toggle('displayNone');
+    updateClubsFun();
+
 });
+
 clubsChange.forEach(element => {
 
     element.addEventListener('click', () => {
@@ -54,8 +146,8 @@ clubsChange.forEach(element => {
             }
         }
         RemClubs.textContent = calRemainingCards(clubsArr);
-        console.log(clubsArr);
-    })
+        updateClubsFun();
+    });
 
 });
 
@@ -66,6 +158,8 @@ const spadesChange = document.querySelectorAll('.spadesChange');
 
 spades.addEventListener('click', () => {
     spadesCards.classList.toggle('displayNone');
+    updateClubsFun();
+
 });
 spadesChange.forEach(element => {
 
@@ -83,8 +177,10 @@ spadesChange.forEach(element => {
             }
         }
         RemSpades.textContent = calRemainingCards(spadesArr);
+        updateClubsFun();
 
     })
+
 
 });
 
@@ -95,6 +191,8 @@ const diamondsChange = document.querySelectorAll('.diamondsChange');
 
 diamonds.addEventListener('click', () => {
     diamondsCards.classList.toggle('displayNone');
+    updateClubsFun();
+
 });
 diamondsChange.forEach(element => {
 
@@ -112,6 +210,7 @@ diamondsChange.forEach(element => {
             }
         }
         RemDiamonds.textContent = calRemainingCards(diamondsArr);
+        updateClubsFun();
 
     })
 
@@ -125,6 +224,8 @@ const heartsChange = document.querySelectorAll('.heartsChange');
 
 hearts.addEventListener('click', () => {
     heartsCards.classList.toggle('displayNone');
+    updateClubsFun();
+
 });
 heartsChange.forEach(element => {
 
@@ -142,7 +243,8 @@ heartsChange.forEach(element => {
             }
         }
         RemHearts.textContent = calRemainingCards(heartArr);
-
+        updateClubsFun();
     })
+    
 
 });
