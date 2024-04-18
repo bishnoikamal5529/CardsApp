@@ -98,6 +98,7 @@ main{
     padding: 10px 1rem;
     background-color:rgb(38, 158, 158);
     box-shadow: aqua 0px 2px 5px;
+    color:black;
 }
 
 .showRemaining:hover{
