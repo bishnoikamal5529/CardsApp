@@ -3,6 +3,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(39, 34, 34);
+
 }
 
 label,p{
@@ -57,16 +58,23 @@ article{
     box-sizing: border-box;
 }
 
-.heartsCards article, .diamondsCards article{
+.heartsCards article, .diamondsCards article, .remainHearts, .remainDiamonds{
     background-color: rgb(207, 63, 63);
 }   
 
-
 footer{
+    display: flex;
+    width: 100vw;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.risk{
     text-align: center;
-    position: relative;
-    margin: 10px 50px;
-    padding: 10px 10px;
+    width: 30%;
+    margin: 5px 1rem;
+    padding: 5px 10px;
     letter-spacing: 2px;
     border-radius: 10px;
     border: none;
@@ -78,9 +86,55 @@ sup{
     color:black;
 }
 
+main{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.showRemaining{
+    padding: 10px 1rem;
+    background-color:rgb(38, 158, 158);
+    box-shadow: aqua 0px 2px 5px;
+}
+
+.showRemaining:hover{
+    background-color: rgb(40, 238, 172);
+}
+
+.remainingCards article{
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+    overflow: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+article button{
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+}
+
+.riskHeart, .riskDiamond{
+    background-color: rgb(207, 63, 63);
+}
+
+.riskAfter::after{
+    content:'Risk';
+}
+
 
 @media (max-width:700px) {
     article{
         padding: 10px 20px;
+    }
+    footer{
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
     }
 }
