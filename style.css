@@ -123,6 +123,9 @@ article button{
 .riskHeart, .riskDiamond{
     background-color: rgb(207, 63, 63);
 }
+.riskSpade, .riskClub{
+    background-color: aliceblue;
+}
 
 .riskAfter::after{
     content:'Risk';
