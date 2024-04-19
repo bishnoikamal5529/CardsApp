@@ -10,8 +10,14 @@ label,p{
     color: aliceblue;
 }
 
+
 .displayNone{
     display: none;
+}
+
+.clear::before{
+    content: 'clear';
+
 }
 
 header{
@@ -36,6 +42,7 @@ header{
 .emoji{
     font-size: 3rem;
 }
+
 .red{
     background-color: rgb(219, 48, 48);
     box-shadow: rgb(206, 120, 120) 0px 2px 5px;
@@ -123,13 +130,9 @@ article button{
 .riskHeart, .riskDiamond{
     background-color: rgb(207, 63, 63);
 }
-.riskSpade, .riskClub{
-    background-color: aliceblue;
-}
 
 .riskAfter::after{
     content:'Risk';
-    color: black;
 }
 
 
