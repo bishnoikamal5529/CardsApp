@@ -129,6 +129,7 @@ article button{
 
 .riskAfter::after{
     content:'Risk';
+    color: black;
 }
 
 
