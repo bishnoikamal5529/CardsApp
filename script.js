@@ -134,7 +134,7 @@ clubsChange.forEach(element => {
 
     element.addEventListener('click', () => {
         let parElement = element.parentElement;
-        parElement.classList.add('displayNone');
+        parElement.classList.toggle('clear');
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
@@ -161,11 +161,12 @@ spades.addEventListener('click', () => {
     updateClubsFun();
 
 });
+
 spadesChange.forEach(element => {
 
     element.addEventListener('click', () => {
         let parElement = element.parentElement;
-        parElement.classList.add('displayNone');
+        parElement.classList.toggle('clear');
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
@@ -198,7 +199,7 @@ diamondsChange.forEach(element => {
 
     element.addEventListener('click', () => {
         let parElement = element.parentElement;
-        parElement.classList.add('displayNone');
+        parElement.classList.toggle('clear');
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
@@ -231,7 +232,7 @@ heartsChange.forEach(element => {
 
     element.addEventListener('click', () => {
         let parElement = element.parentElement;
-        parElement.classList.add('displayNone');
+        parElement.classList.toggle('clear');
         let letterVal = parElement.textContent;
         letterVal = letterVal.charAt(0);
 
